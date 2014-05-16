@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+           id="com.jobdeer.avosplugin"
+      version="0.1.0">
+    <name>phonegap-avos-plugin</name>
+    <description>phonegap avos plugin</description>
+
+    <js-module src="www/cdv-plugin-avos.js" name="AvosPlugin">
+        <clobbers target="window.avosPlugin" />
+    </js-module>
+
+    <!-- ios -->
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="AvosPlugin">
+                <param name="ios-package" value="CDVAvosPlugin" />
+            </feature>
+        </config-file>
+        <header-file src="src/ios/CDVAvosPlugin.h" />
+        <source-file src="src/ios/CDVAvosPlugin.m" />
+    </platform>
+          
+</plugin>
