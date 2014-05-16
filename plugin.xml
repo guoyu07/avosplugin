@@ -10,6 +10,17 @@
         <clobbers target="window.avosPlugin" />
     </js-module>
 
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="AvosPlugin">
+                <param name="android-package" value="com.jobdeer.avosplugin.AvosPlugin" />
+            </feature>
+        </config-file>
+        <source-file src="src/android/AvosPlugin.java" target-dir="src/com/jobdeer/avosplugin" />      
+     </platform>
+
+
     <!-- ios -->
     <platform name="ios">
         <config-file target="config.xml" parent="/*">
