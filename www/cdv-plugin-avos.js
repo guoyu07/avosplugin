@@ -1,64 +1,4 @@
-var avosPlugin = {
-    initialize: function(appId, clientKey, successCallback, errorCallback) {
-        cordova.exec(
-            successCallback,
-            errorCallback,
-            'AvosPlugin',
-            'initialize',
-            [appId, clientKey]
-        );
-    },
-
-    getInstallationId: function(successCallback, errorCallback) {
-        cordova.exec(
-            successCallback,
-            errorCallback,
-            'AvosPlugin',
-            'getInstallationId',
-            []
-        );
-    },
-
-    getInstallationObjectId: function(successCallback, errorCallback) {
-        cordova.exec(
-            successCallback,
-            errorCallback,
-            'AvosPlugin',
-            'getInstallationObjectId',
-            []
-        );
-    },
-
-    getSubscriptions: function(successCallback, errorCallback) {
-        cordova.exec(
-            successCallback,
-            errorCallback,
-            'AvosPlugin',
-            'getSubscriptions',
-            []
-        );
-    },
-
-    subscribe: function(channel, successCallback, errorCallback) {
-        cordova.exec(
-            successCallback,
-            errorCallback,
-            'AvosPlugin',
-            'subscribe',
-            [ channel ]
-        );
-    },
-
-    unsubscribe: function(channel, successCallback, errorCallback) {
-        cordova.exec(
-            successCallback,
-            errorCallback,
-            'AvosPlugin',
-            'unsubscribe',
-            [ channel ]
-        );
-    }
-    ,
+cordova.define("com.jobdeer.avosplugin.AvosPlugin", function(require, exports, module) { var avosPlugin = {
     echo : function(str,successCallback,errorCallback){
       cordova.exec(
             successCallback,
@@ -67,6 +7,30 @@ var avosPlugin = {
             'echo',
             [ str ]
         );
+    },
+    set_badge_num : function(num,successCallback,errorCallback){
+      num=num||0;
+      cordova.exec(
+            successCallback,
+            errorCallback,
+            'AvosPlugin',
+            'set_badge_num',
+            [num]
+        );
+    },
+    //获得install_id ， ios 获得 device_id 
+    get_install_id:function(successCallback,errorCallback)
+    {
+        cordova.exec(
+            successCallback,
+            errorCallback,
+            'AvosPlugin',
+            'get_install_id',
+            []
+        );
     }
+
 };
 module.exports = avosPlugin;
+
+});
