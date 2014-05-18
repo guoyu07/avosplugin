@@ -1,27 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
-           id="com.jobdeer.avosplugin"
-      version="0.1.0">
-    <name>phonegap-avos-plugin</name>
-    <description>phonegap avos plugin</description>
-
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    id="com.jobdeer.avosplugin"
+    version="0.0.1">
+    <name>avosplugin</name>
+    <description>Ionic Avos Plugin</description>
+    <license>Apache 2.0</license>
+    <keywords>Ionic,Avos</keywords>
+  
     <js-module src="www/cdv-plugin-avos.js" name="AvosPlugin">
         <clobbers target="window.avosPlugin" />
     </js-module>
 
-    <!-- android -->
-    <platform name="android">
-        <config-file target="res/xml/config.xml" parent="/*">
-            <feature name="AvosPlugin">
-                <param name="android-package" value="com.jobdeer.avosplugin.AvosPlugin" />
-            </feature>
-        </config-file>
-        <source-file src="src/android/AvosPlugin.java" target-dir="src/com/jobdeer/avosplugin" />      
-     </platform>
+  <!-- android -->
+  <platform name="android">
 
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="AvosPlugin">
+        <param name="android-package" value="com.jobdeer.avosplugin.AvosPlugin" />
+        <param name="onload" value="true" />
+      </feature>
+    </config-file>
 
-    <!-- ios -->
+    <source-file src="src/android/AvosPlugin.java" target-dir="src/com/jobdeer/avosplugin" />
+  </platform>
+
+  <!-- ios -->
     <platform name="ios">
         <config-file target="config.xml" parent="/*">
             <feature name="AvosPlugin">
@@ -31,5 +35,5 @@
         <header-file src="src/ios/CDVAvosPlugin.h" />
         <source-file src="src/ios/CDVAvosPlugin.m" />
     </platform>
-          
+
 </plugin>

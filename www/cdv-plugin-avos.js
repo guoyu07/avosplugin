@@ -1,4 +1,4 @@
-cordova.define("com.jobdeer.avosplugin.AvosPlugin", function(require, exports, module) { var avosPlugin = {
+var avosPlugin = {
     echo : function(str,successCallback,errorCallback){
       cordova.exec(
             successCallback,
@@ -32,5 +32,3 @@ cordova.define("com.jobdeer.avosplugin.AvosPlugin", function(require, exports, m
 
 };
 module.exports = avosPlugin;
-
-});
